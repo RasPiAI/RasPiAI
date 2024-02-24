@@ -11,10 +11,13 @@ Before you begin:
    - `sudo reboot`
       
 3. Enlarge the partition of the Mico-SD card:
-    - `sudo-raspi-config`
+    - `sudo raspi-config`
     - at "6 Advanced Options" -> "A1 Expand Filesystem"
 
-4. 
+4. Setting the regional setting, timezone and WLAN:
+     - `sudo raspi-config`
+     - at "5 Localisation Options" -> "L1 Locale", "L2 Timezone" and "L4 WLAN Country"
+     - choose the settings that suit your country 
   
 5. Installing **Docker**:
    - `curl -sSL https://get.docker.com -o install-docker.sh`
