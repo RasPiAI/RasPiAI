@@ -20,6 +20,9 @@ Before you begin:
 
 5. Verify the Docker installation with:
    - `docker run hello-world`
+  
+6. Installing **Docker Compose**:
+    - Download [Asset docker-compose-linux-armv7](https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7)
 
        
 - 🔭 I’m currently working on ...
