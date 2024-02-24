@@ -6,7 +6,10 @@ Before you begin:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz?_gl=1*ub0mk4*_ga*MTk1NDg2OTQzMC4xNzA3ODE5Nzc2*_ga_22FD70LWDS*MTcwODc3NTIyMC4yLjEuMTcwODc3NTMwOC4wLjAuMA..)
     - The BerryPlexus can be reached via SSH, username: BerryPlexus, password: BerryPlexus$.
 
-2. Installing **Docker**:
+2. Raspberry Pi OS Lite **updaten und upgraden**:
+   `sudo apt update && sudo apt upgrade`
+      
+3.Installing **Docker**:
    - Download 
        
 - 🔭 I’m currently working on ...
