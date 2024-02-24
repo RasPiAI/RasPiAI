@@ -1,4 +1,4 @@
-### Hi there 👋
+### Version 0.1 (pre-release), 2024-02-24 (first version)
 
 <!--
 **BerryPlexus/BerryPlexus** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
