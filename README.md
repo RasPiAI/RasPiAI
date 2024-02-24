@@ -10,7 +10,7 @@ Before you begin:
    - `sudo apt update && sudo apt upgrade`
    - `sudo reboot`
       
-3.Installing **Docker**:
+3. Installing **Docker**:
    - Download 
        
 - 🔭 I’m currently working on ...
