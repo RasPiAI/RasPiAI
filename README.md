@@ -11,7 +11,7 @@ Before you begin:
    - `sudo reboot`
       
 3. Installing **Docker**:
-   - Download 
+   - `curl -sSL https://get.docker.com -o install-docker.sh`
        
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
