@@ -26,7 +26,13 @@ Before you begin:
     - `chmod +x docker-compose`
     - `sudo mv docker-compose /usr/local/bin`
 
-       
+7. Install a Texteditor like **Vim**:
+   - `sudo apt install vim`
+
+## How to install ollama 🦙 and open-webui together using docker :🐳
+
+
+
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
