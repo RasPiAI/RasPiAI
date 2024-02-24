@@ -10,23 +10,29 @@ Before you begin:
    - `sudo apt update && sudo apt upgrade`
    - `sudo reboot`
       
-3. Installing **Docker**:
+3. Enlarge the partition of the Mico-SD card:
+    - `sudo-raspi-config`
+    - at "6 Advanced Options" -> "A1 Expand Filesystem"
+
+4. 
+  
+5. Installing **Docker**:
    - `curl -sSL https://get.docker.com -o install-docker.sh`
    - `bash install-docker.sh`
 
-4. Inclusion of the current user in the Docker user group:
+6. Inclusion of the current user in the Docker user group:
    - `sudo usermod -aG docker $USER`
    - `newgrp docker`
 
-5. Verify the Docker installation with:
+7. Verify the Docker installation with:
    - `docker run hello-world`
   
-6. Installing **Docker Compose**:
+8. Installing **Docker Compose**:
     - Download [Asset docker-compose-linux-armv7](https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7) for Raspberry Pi 4 with `wget https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7 -O docker-compose`
     - `chmod +x docker-compose`
     - `sudo mv docker-compose /usr/local/bin`
 
-7. Install a Texteditor like **Vim**:
+9. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
 
 ## How to install ollama 🦙 and open-webui together using docker :🐳
