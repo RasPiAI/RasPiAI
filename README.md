@@ -7,7 +7,8 @@ Before you begin:
     - The BerryPlexus can be reached via SSH, username: BerryPlexus, password: BerryPlexus$.
 
 2. Raspberry Pi OS Lite **updaten und upgraden**:
-   `sudo apt update && sudo apt upgrade`
+   - `sudo apt update && sudo apt upgrade`
+   - `sudo reboot`
       
 3.Installing **Docker**:
    - Download 
