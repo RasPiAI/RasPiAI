@@ -23,6 +23,7 @@ Before you begin:
   
 6. Installing **Docker Compose**:
     - Download [Asset docker-compose-linux-armv7](https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7) for Raspberry Pi 4 with `wget https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7 -o docker-compose`
+    - `chmod +x docker-compose`
 
        
 - 🔭 I’m currently working on ...
