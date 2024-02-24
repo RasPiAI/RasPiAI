@@ -12,6 +12,7 @@ Before you begin:
       
 3. Installing **Docker**:
    - `curl -sSL https://get.docker.com -o install-docker.sh`
+   - `bash install-docker.sh`
        
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
