@@ -2,10 +2,12 @@
 
 ## How to install 🚀
 Before you begin: 
-1. Installing Raspberry Pi OS
+1. Installing Raspberry Pi OS:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz?_gl=1*ub0mk4*_ga*MTk1NDg2OTQzMC4xNzA3ODE5Nzc2*_ga_22FD70LWDS*MTcwODc3NTIyMC4yLjEuMTcwODc3NTMwOC4wLjAuMA..)
-    - Download      
-    
+    - The BerryPlexus can be reached via SSH, username: BerryPlexus, password: BerryPlexus$.
+
+2. Installing Docker:
+   - Download 
        
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
