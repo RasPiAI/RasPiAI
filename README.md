@@ -1,7 +1,8 @@
 ### Version 0.1 (pre-release), 2024-02-24 (first version)
 
 ## How to install 🚀
-Here are some ideas to get you started:
+Before you begin: 
+1. 
 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
