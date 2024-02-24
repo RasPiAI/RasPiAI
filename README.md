@@ -13,6 +13,14 @@ Before you begin:
 3. Installing **Docker**:
    - `curl -sSL https://get.docker.com -o install-docker.sh`
    - `bash install-docker.sh`
+
+4. Inclusion of the current user in the Docker user group:
+   - `sudo usermod -aG docker $USER`
+   - `newgrp docker`
+
+5. Verify the Docker installation with:
+   - `docker run hello-world`
+
        
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
