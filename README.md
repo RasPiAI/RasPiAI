@@ -51,49 +51,9 @@
 3. Running open-webui
    - `git clone https://github.com/ollama-webui/ollama-webui`
    - `cd ollama-webui`
-   - `vim docker-compose.yml`
+   - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
+   - 
 
-docker-compose.yml file:
-`version: '3.8'
-
-services:
-  ollama:
-    volumes:
-      - ollama:/root/.ollama
-    container_name: ollama
-    pull_policy: always
-    tty: true
-    restart: unless-stopped
-    image: ollama/ollama:latest
-
-  open-webui:
-    build:
-      context: .
-      args:
-        OLLAMA_API_BASE_URL: '/ollama/api'
-      dockerfile: Dockerfile
-    image: ghcr.io/open-webui/open-webui:latest
-    container_name: open-webui
-    volumes:
-      - open-webui:/app/backend/data 
-    depends_on:
-      - ollama
-    ports:
-      - ${OLLAMA_WEBUI_PORT-3000}:8088
-    environment:
-      - 'OLLAMA_API_BASE_URL=http://ollama:11434/api'
-      - 'WEBUI_SECRET_KEY0'
-    extra_hosts:
-      - host.docker.internal:host-gateway
-    restart: unless-stopped
-
-volumes:
-  ollama: {}
-  ollama-webui: {}
-
-networks:
-  internal:
-    external: true`
 
   
      
