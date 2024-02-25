@@ -92,7 +92,56 @@ dhcp-range=192.168.1.100,192.168.1.200,255.255.255.0,24h
 # DNS
 dhcp-option=option:dns-server,192.168.1.1
 ```
-   
+
+6. Check DHCP server and DNS cache and put into operation
+   - `dnsmasq --test -C /etc/dnsmasq.conf` -> "syntax check OK"
+   - `sudo systemctl restart dnsmasq`
+   - `sudo systemctl status dnsmasq` -> should be "active" and "running" 
+   - `sudo systemctl enable dnsmasq`
+
+7. Set up WLAN-AP host
+   - `sudo nano /etc/hostapd/hostapd.conf`
+```
+# WLAN-Router-Betrieb
+
+# Schnittstelle und Treiber
+interface=wlan0
+driver=nl80211
+
+# WLAN-Konfiguration
+ssid=BerryPlexus
+channel=1
+hw_mode=g
+ieee80211n=1
+ieee80211d=1
+country_code= #Change to your own country code 
+wmm_enabled=1
+
+# WLAN-Verschlüsselung
+auth_algs=1
+wpa=2
+wpa_key_mgmt=WPA-PSK
+rsn_pairwise=CCMP
+wpa_passphrase=BerryPlexus$
+```
+
+8. Changing the read rights to the file
+   - `sudo chmod 600 /etc/hostapd/hostapd.conf`
+
+9. Check WLAN-AP host configuration and put into operation
+   - `sudo hostapd -dd /etc/hostapd/hostapd.conf` -> With "Ctrl + C" you can end the running hostapd instance if required.
+   - If the following messages appear, everything is in the green zone:
+```
+...
+wlan0: interface state COUNTRY_UPDATE->ENABLED
+...
+wlan0: AP-ENABLED
+...
+```
+
+ 
+     
+     
 
    
 
