@@ -77,7 +77,22 @@ nohook wpa_supplicant
 5. Set up DHCP server and DNS cache
    -`sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf_alt`
    -`sudo nano /etc/dnsmasq.conf  `
-   -`sudo nano /etc/dnsmasq.conf `
+   -`sudo nano /etc/dnsmasq.conf`
+
+```
+# DHCP-Server aktiv für WLAN-Interface
+interface=wlan0
+
+# DHCP-Server nicht aktiv für bestehendes Netzwerk
+no-dhcp-interface=eth0
+
+# IPv4-Adressbereich und Lease-Time
+dhcp-range=192.168.1.100,192.168.1.200,255.255.255.0,24h
+
+# DNS
+dhcp-option=option:dns-server,192.168.1.1
+```
+   
 
    
 
