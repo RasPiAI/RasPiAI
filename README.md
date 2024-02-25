@@ -53,6 +53,7 @@
    - `cd ollama-webui`
    - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
    - `docker stop ollama`
+   - `docker compose up -d`
    - 
 
 
