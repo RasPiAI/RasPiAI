@@ -139,6 +139,21 @@ wlan0: AP-ENABLED
 ...
 ```
 
+10. So that the "hostapd" starts as a daemon in the background
+    - `sudo nano /etc/default/hostapd`
+    - We add the following parameters:
+```
+RUN_DAEMON=yes
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
+```
+
+11. Start-up of "hostapd"
+    - `sudo systemctl unmask hostapd`
+    - `sudo systemctl start hostapd`
+    - `sudo systemctl enable hostapd`
+   
+12. Check status of "hostapd
+    - `sudo systemctl status hostapd` -> The following lines should appear here: Loaded: loaded and Active: active
  
      
      
