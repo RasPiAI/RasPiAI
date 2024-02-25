@@ -1,7 +1,7 @@
 ### Version 0.1 (pre-release), 2024-02-24 (first version)
 
-## How to prepare the Raspberry Pi :pie:
-Before you begin: 
+## How to prepare the Raspberry Pi: :pie:
+
 1. Installing **Raspberry Pi OS**:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz?_gl=1*ub0mk4*_ga*MTk1NDg2OTQzMC4xNzA3ODE5Nzc2*_ga_22FD70LWDS*MTcwODc3NTIyMC4yLjEuMTcwODc3NTMwOC4wLjAuMA..)
     - The BerryPlexus can be reached via SSH, username: BerryPlexus, password: BerryPlexus$.
@@ -38,7 +38,13 @@ Before you begin:
 9. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
 
-## How to install ollama 🦙 and open-webui together using docker :🐳
+## How to install ollama 🦙 and open-webui together using docker:🐳
+
+## Resources at your fingertips: ⌨️
+
+1. `[Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)`
+2. `[Docker Cheatsheet](https://collabnix.com/docker-cheatsheet/)`
+3. `[VIM Cheatsheet](https://devhints.io/vim)`
 
 
 
