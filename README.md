@@ -59,17 +59,28 @@
 
 1. Installation of required programme
    - `sudo apt install dnsmasq hostapd iptables`
+   - `sudo apt-get install dhcpcd5`
 
  2. Configuring the WLAN interface
     - `sudo nano /etc/dhcpcd.conf`
-      `interface wlan0
-      static ip_address=192.168.1.1/24
-      nohook wpa_supplicant`  
-     
+```
+interface wlan0
+static ip_address=192.168.1.1/24
+nohook wpa_supplicant
+```
+3. Restart DHCP Client Daemon
+    - `sudo systemctl restart dhcpcd`
+    
+4. Check whether the Ethernet interface (eth0) and the WLAN adapter (wlan0) are working and present.
+    - `ip l`
 
-
+5. Set up DHCP server and DNS cache
+   -`sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf_alt`
+   -`sudo nano /etc/dnsmasq.conf  `
+   -`sudo nano /etc/dnsmasq.conf `
 
    
+
    
 ## Resources at your fingertips: ⌨️
 
