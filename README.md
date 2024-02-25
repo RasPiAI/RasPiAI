@@ -38,7 +38,7 @@
 9. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
 
-## How to install ollama 🦙 and open-webui together using docker:🐳
+## How to install ollama 🦙 and open-webui together using docker🐳:
 
 1. Running Ollama in a Docker container
    - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
@@ -54,9 +54,10 @@
    - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
    - `docker stop ollama`
    - `docker compose up -d`
-   - 
 
+## How to make your Raspberry Pi to an Acess Point :satellite::
 
+1. 
   
      
 
