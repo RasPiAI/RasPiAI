@@ -154,13 +154,25 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
    
 12. Check status of "hostapd
     - `sudo systemctl status hostapd` -> The following lines should appear here: Loaded: loaded and Active: active
- 
-     
-     
 
+13.  Configure routing and NAT for the Internet connection
+     - `sudo nano /etc/sysctl.conf`
+     - remove the # symbol before the following line of code `net.ipv4.ip_forward=1`
+     - `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
+     - `sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"`
+     - `sudo nano /etc/rc.local`
+     - Here we enter the following code line before the line with "exit 0": `iptables-restore < /etc/iptables.ipv4.nat`
    
+14. Reboot the Raspberry Pi
+    -`sudo reboot`
 
-   
+15. Check WLAN, router and DHCP/DNS function
+    - `sudo systemctl status hostapd` -> should be "active" and "running"
+    -` ps ax | grep hostapd`
+    - `sudo systemctl status dnsmasq`
+    -  `ps ax | grep dnsmasq`
+
+  
 ## Resources at your fingertips: ⌨️
 
 1. [Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)
@@ -173,7 +185,9 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
 - 🌱 I’m currently learning ...
 - 👯 I’m looking to collaborate on ...
 - 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
+- 💬 Ask me about ...Configure routing and NAT for the Internet connection
+
+
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
