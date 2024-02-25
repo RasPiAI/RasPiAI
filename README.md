@@ -40,14 +40,12 @@
 
 ## How to install ollama 🦙 and open-webui together using docker:🐳
 
-1. Running Ollama in a Docker container:
-     -`docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`
-   
-2. Check if Ollama is running or not:
-     - `docker ps`
+1. Running Ollama in a Docker container
+   - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
+3. Check if Ollama is running or not:
+        - `docker ps`
 > CONTAINER ID  IMAGE                COMMAND             CREATED       STATUS       PORTS                                          NAMES
-  0a5142e31b9c  ollama/ollama:latest "/bin/ollama serve" 1 minute ago  Up 1 minute  0.0.0.:11434->11434/tcp, :::11434->11434/tcp   ollama 
-     - `curl http://localhost:11434`
+  0a5142e31b9c  ollama/ollama:latest "/bin/ollama serve" 1 minute ago  Up 1 minute  0.0.0.:11434->11434/tcp, :::11434->11434/tcp   ollam         - `curl http://localhost:11434`
 > Ollama is running
 
    
