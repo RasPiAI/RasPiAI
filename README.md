@@ -57,8 +57,14 @@
 
 ## How to make your Raspberry Pi to an Acess Point :satellite::
 
-1. 
-  
+1. Installation of required programme
+   - `sudo apt install dnsmasq hostapd iptables`
+
+ 2. Configuring the WLAN interface
+    - `sudo nano /etc/dhcpcd.conf`
+      `interface wlan0
+      static ip_address=192.168.1.1/24
+      nohook wpa_supplicant`  
      
 
 
