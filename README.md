@@ -42,9 +42,9 @@
 
 ## Resources at your fingertips: ⌨️
 
-1. `[Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)`
-2. `[Docker Cheatsheet](https://collabnix.com/docker-cheatsheet/)`
-3. `[VIM Cheatsheet](https://devhints.io/vim)`
+1. [Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)
+2. [Docker Cheatsheet](https://collabnix.com/docker-cheatsheet/)
+3. [VIM Cheatsheet](https://devhints.io/vim)
 
 
 
