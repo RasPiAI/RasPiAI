@@ -67,17 +67,14 @@ nohook wpa_supplicant
    -`sudo nano /etc/dnsmasq.conf`
 
 ```
-# DHCP-Server aktiv für WLAN-Interface
+# DHCP server active for WLAN interface
 interface=wlan0
 
-# DHCP-Server nicht aktiv für bestehendes Netzwerk
+# DHCP server not active for existing network
 no-dhcp-interface=eth0
 
 # IPv4-Adressbereich und Lease-Time
-dhcp-range=192.168.1.100,192.168.1.200,255.255.255.0,24h
-
-# DNS
-dhcp-option=option:dns-server,192.168.1.1
+dhcp-range=192.168.4.2,192.168.4.50,255.255.255.0,24h
 ```
 
 7. Check DHCP server and DNS cache and put into operation
