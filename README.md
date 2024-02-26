@@ -52,7 +52,7 @@
     - `sudo nano /etc/dhcpcd.conf`
 ```
 interface wlan0
-static ip_address=192.168.1.1/24
+static ip_address=192.168.4.1/24
 nohook wpa_supplicant
 ```
 4. Restart DHCP Client Daemon
