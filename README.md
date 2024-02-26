@@ -142,6 +142,10 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
 13. Check status of "hostapd
     - `sudo systemctl status hostapd` -> The following lines should appear here: Loaded: loaded and Active: active
 
+14. Check that the WLAN interface is not managed by another network management tool
+    - `sudo systemctl stop NetworkManager`
+    - `sudo systemctl stop wpa_supplicant`
+
 14.  Configure routing and NAT for the Internet connection
      - `sudo nano /etc/sysctl.conf`
      - remove the # symbol before the following line of code `net.ipv4.ip_forward=1`
