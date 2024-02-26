@@ -37,44 +37,31 @@
 
 9. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
-
-## How to install ollama 🦙 and open-webui together using docker🐳:
-
-1. Running Ollama in a Docker container
-   - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
-2. Check if Ollama is running or not:
-   - `docker ps`
-> CONTAINER ID: 0a5142e31b9c  IMAGE: 0a5142e31b9c  COMMAND: ollama/ollama:latest  CREATED: 1 minute ago  STATUS:Up 1 minute              PORTS: 0.0.0.:11434->11434/tcp,  :::11434->11434/tcp  NAMES: ollama      
-   - `curl http://localhost:11434`
-> Ollama is running
-
-3. Running open-webui
-   - `git clone https://github.com/ollama-webui/ollama-webui`
-   - `cd ollama-webui`
-   - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
-   - `docker stop ollama`
-   - `docker compose up -d`
-
+  
 ## How to make your Raspberry Pi to an Acess Point :satellite::
 
 1. Installation of required programme
    - `sudo apt install dnsmasq hostapd iptables`
    - `sudo apt-get install dhcpcd5`
 
- 2. Configuring the WLAN interface
+2. Stop the packages from running
+   - `sudo systemctl stop hostapd`
+   - `sudo systemctl stop dnsmasq` 
+
+3. Configuring the WLAN interface
     - `sudo nano /etc/dhcpcd.conf`
 ```
 interface wlan0
 static ip_address=192.168.1.1/24
 nohook wpa_supplicant
 ```
-3. Restart DHCP Client Daemon
+4. Restart DHCP Client Daemon
     - `sudo systemctl restart dhcpcd`
     
-4. Check whether the Ethernet interface (eth0) and the WLAN adapter (wlan0) are working and present.
+5. Check whether the Ethernet interface (eth0) and the WLAN adapter (wlan0) are working and present.
     - `ip l`
 
-5. Set up DHCP server and DNS cache
+6. Set up DHCP server and DNS cache
    -`sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf_alt`
    -`sudo nano /etc/dnsmasq.conf  `
    -`sudo nano /etc/dnsmasq.conf`
@@ -93,13 +80,13 @@ dhcp-range=192.168.1.100,192.168.1.200,255.255.255.0,24h
 dhcp-option=option:dns-server,192.168.1.1
 ```
 
-6. Check DHCP server and DNS cache and put into operation
+7. Check DHCP server and DNS cache and put into operation
    - `dnsmasq --test -C /etc/dnsmasq.conf` -> "syntax check OK"
    - `sudo systemctl restart dnsmasq`
    - `sudo systemctl status dnsmasq` -> should be "active" and "running" 
    - `sudo systemctl enable dnsmasq`
 
-7. Set up WLAN-AP host
+8. Set up WLAN-AP host
    - `sudo nano /etc/hostapd/hostapd.conf`
 ```
 # WLAN-Router-Betrieb
@@ -125,10 +112,10 @@ rsn_pairwise=CCMP
 wpa_passphrase=BerryPlexus$
 ```
 
-8. Changing the read rights to the file
+9. Changing the read rights to the file
    - `sudo chmod 600 /etc/hostapd/hostapd.conf`
 
-9. Check WLAN-AP host configuration and put into operation
+10. Check WLAN-AP host configuration and put into operation
    - `sudo hostapd -dd /etc/hostapd/hostapd.conf` -> With "Ctrl + C" you can end the running hostapd instance if required.
    - If the following messages appear, everything is in the green zone:
 ```
@@ -139,7 +126,7 @@ wlan0: AP-ENABLED
 ...
 ```
 
-10. So that the "hostapd" starts as a daemon in the background
+11. So that the "hostapd" starts as a daemon in the background
     - `sudo nano /etc/default/hostapd`
     - We add the following parameters:
 ```
@@ -147,15 +134,15 @@ RUN_DAEMON=yes
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
 
-11. Start-up of "hostapd"
+12. Start-up of "hostapd"
     - `sudo systemctl unmask hostapd`
     - `sudo systemctl start hostapd`
     - `sudo systemctl enable hostapd`
    
-12. Check status of "hostapd
+13. Check status of "hostapd
     - `sudo systemctl status hostapd` -> The following lines should appear here: Loaded: loaded and Active: active
 
-13.  Configure routing and NAT for the Internet connection
+14.  Configure routing and NAT for the Internet connection
      - `sudo nano /etc/sysctl.conf`
      - remove the # symbol before the following line of code `net.ipv4.ip_forward=1`
      - `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
@@ -163,16 +150,32 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
      - `sudo nano /etc/rc.local`
      - Here we enter the following code line before the line with "exit 0": `iptables-restore < /etc/iptables.ipv4.nat`
    
-14. Reboot the Raspberry Pi
+15. Reboot the Raspberry Pi
     -`sudo reboot`
 
-15. Check WLAN, router and DHCP/DNS function
+16. Check WLAN, router and DHCP/DNS function
     - `sudo systemctl status hostapd` -> should be "active" and "running"
     -` ps ax | grep hostapd`
     - `sudo systemctl status dnsmasq`
     -  `ps ax | grep dnsmasq`
 
-  
+## How to install ollama 🦙 and open-webui together using docker🐳:
+
+1. Running Ollama in a Docker container
+   - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
+2. Check if Ollama is running or not:
+   - `docker ps`
+> CONTAINER ID: 0a5142e31b9c  IMAGE: 0a5142e31b9c  COMMAND: ollama/ollama:latest  CREATED: 1 minute ago  STATUS:Up 1 minute              PORTS: 0.0.0.:11434->11434/tcp,  :::11434->11434/tcp  NAMES: ollama      
+   - `curl http://localhost:11434`
+> Ollama is running
+
+3. Running open-webui
+   - `git clone https://github.com/ollama-webui/ollama-webui`
+   - `cd ollama-webui`
+   - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
+   - `docker stop ollama`
+   - `docker compose up -d`
+
 ## Resources at your fingertips: ⌨️
 
 1. [Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)
