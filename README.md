@@ -42,7 +42,7 @@
 
 1. Installation of required programme
    - `sudo apt install dnsmasq hostapd iptables`
-   - `sudo apt-get install dhcpcd5`
+   - `sudo apt install dhcpcd5`
 
 2. Stop the packages from running
    - `sudo systemctl stop hostapd`
