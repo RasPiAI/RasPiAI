@@ -86,27 +86,20 @@ dhcp-range=192.168.4.2,192.168.4.50,255.255.255.0,24h
 8. Set up WLAN-AP host
    - `sudo nano /etc/hostapd/hostapd.conf`
 ```
-# WLAN-Router-Betrieb
-
-# Schnittstelle und Treiber
 interface=wlan0
 driver=nl80211
-
-# WLAN-Konfiguration
-ssid=BerryPlexus
-channel=1
+ssid=RasPiAI
 hw_mode=g
-ieee80211n=1
-ieee80211d=1
-country_code= #Change to your own country code 
+channel=7
 wmm_enabled=1
-
-# WLAN-Verschlüsselung
+macaddr_acl=0
 auth_algs=1
+ignore_broadcast_ssid=0
 wpa=2
+wpa_passphrase=RasPiAI$
 wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
 rsn_pairwise=CCMP
-wpa_passphrase=BerryPlexus$
 ```
 
 9. Changing the read rights to the file
