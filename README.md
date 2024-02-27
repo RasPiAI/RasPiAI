@@ -182,6 +182,17 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
    - `docker stop ollama`
    - `docker compose up -d`
+  
+## Configure Firewall :fire:
+
+1. Allow incoming connections on port 80
+   - `sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT`
+  
+2. Save Firewall Rules
+   - `sudo apt-get install iptables-persistent`
+   - `sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null `
+  
+
 
 ## Resources at your fingertips: ⌨️
 
