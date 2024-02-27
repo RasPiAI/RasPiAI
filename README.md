@@ -2,7 +2,7 @@
 
 To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 5 with 8 GB of RAM.
 
-## How to prepare the Raspberry Pi :pie: :
+## How to prepare the Raspberry Pi::pie:
 
 1. Installing **Raspberry Pi OS**:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz?_gl=1*ub0mk4*_ga*MTk1NDg2OTQzMC4xNzA3ODE5Nzc2*_ga_22FD70LWDS*MTcwODc3NTIyMC4yLjEuMTcwODc3NTMwOC4wLjAuMA..)
