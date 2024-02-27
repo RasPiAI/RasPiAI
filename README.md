@@ -191,7 +191,22 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
 2. Save Firewall Rules
    - `sudo apt-get install iptables-persistent`
    - `sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null `
-  
+
+## Setting up automatic login
+
+1. `sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf`
+
+2. Paste the following content into the file and save and close the file at the end.
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin RasPiAI --noclear %I 38400 linux
+```
+3. `sudo systemctl daemon-reload`
+
+4.` sudo systemctl enable getty@tty1.service`
+
+5.` sudo reboot`
 
 
 ## Resources at your fingertips: ⌨️
