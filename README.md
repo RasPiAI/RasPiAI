@@ -207,6 +207,7 @@ There is a possibility that problems may occur when docker compose is executed d
 ExecStart=
 ExecStart=-/sbin/agetty --autologin RasPiAI --noclear %I 38400 linux
 ```
+
 3. `sudo systemctl daemon-reload`
 
 4.` sudo systemctl enable getty@tty1.service`
