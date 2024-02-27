@@ -183,6 +183,11 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - `docker stop ollama`
    - `docker compose up -d`
   
+### Troubleshooting: 
+
+There is a possibility that problems may occur when docker compose is executed despite the docker container being stopped. If this is the case, the Ollama container must be deleted. 
+   - `rm ollama`
+  
 ## Configure Firewall :fire:
 
 1. Allow incoming connections on port 80
