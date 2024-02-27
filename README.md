@@ -2,7 +2,7 @@
 
 To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 5 with 8 GB of RAM.
 
-## How to prepare the Raspberry Pi::pie:
+## How to prepare the Raspberry Pi: 🥧
 
 1. Installing **Raspberry Pi OS**:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11/2023-12-11-raspios-bookworm-arm64-lite.img.xz?_gl=1*ub0mk4*_ga*MTk1NDg2OTQzMC4xNzA3ODE5Nzc2*_ga_22FD70LWDS*MTcwODc3NTIyMC4yLjEuMTcwODc3NTMwOC4wLjAuMA..)
@@ -40,7 +40,7 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 9. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
   
-## How to make your Raspberry Pi to an Acess Point :satellite: :
+## How to make your Raspberry Pi to an Acess Point: 📡
 
 1. Installation of required programme
    - `sudo apt install dnsmasq hostapd iptables`
@@ -188,7 +188,7 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
 There is a possibility that problems may occur when docker compose is executed despite the docker container being stopped. If this is the case, the Ollama container must be deleted. 
    - `rm ollama`
   
-## How to configure the Firewall :fire :
+## How to configure the Firewall: 🔥
 
 1. Allow incoming connections on port 80
    - `sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT`
@@ -197,7 +197,7 @@ There is a possibility that problems may occur when docker compose is executed d
    - `sudo apt-get install iptables-persistent`
    - `sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null `
 
-## Setting up automatic login
+## How to set up an automatic login: 🤖
 
 1. `sudo nano /etc/systemd/system/getty@tty1.service.d/autologin.conf`
 
