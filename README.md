@@ -180,9 +180,8 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
 2. Check if Ollama is running or not:
    - `docker ps`
-> CONTAINER ID: 0a5142e31b9c  IMAGE: 0a5142e31b9c  COMMAND: ollama/ollama:latest  CREATED: 1 minute ago  STATUS:Up 1 minute              PORTS: 0.0.0.:11434->11434/tcp,  :::11434->11434/tcp  NAMES: ollama      
-   - `curl http://localhost:11434`
-> Ollama is running
+     > CONTAINER ID: 0a5142e31b9c  IMAGE: 0a5142e31b9c  COMMAND: ollama/ollama:latest  CREATED: 1 minute ago  STATUS:Up 1 minute              PORTS: 0.0.0.:11434->11434/tcp,  :::11434->11434/tcp  NAMES: ollama
+   - `curl http://localhost:11434` -> Ollama is running
 
 3. Running open-webui
    - `git clone https://github.com/ollama-webui/ollama-webui`
