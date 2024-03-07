@@ -167,7 +167,8 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - Deactivate the NetworkManager. To do this, execute the commands `sudo systemctl stop NetworkManager` and `sudo systemctl disable NetworkManager`.
    - Activate and start hostapd again to reconfigure the services. To do this, you must enter the following in sequence: `sudo systemctl stop hostapd`, `sudo systemctl unmask hostapd`, `sudo systemctl enable hostapd` and `sudo systemctl start hostapd`. 
    - Reboot the Raspberry Pi with `sudo reboot`.
-   - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. Now "AP" should appear next to the type.  
+   - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. Now "AP" should appear next to the type.
+   - The WLAN with the name RasPiAI should now be active.
 
 ## How to install ollama 🦙 and open-webui together using docker🐳:
 
