@@ -135,7 +135,7 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
     - `sudo systemctl enable hostapd`
    
 13. Check status of "hostapd
-    - `sudo systemctl status hostapd` -> The following lines should appear here: Loaded: loaded and Active: active
+    - `sudo systemctl status hostapd` -> You should see "active (running)" and "enabled" in green.
 
 14. Check that the WLAN interface is not managed by another network management tool
     - `sudo systemctl stop NetworkManager`
