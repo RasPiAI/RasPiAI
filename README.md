@@ -123,9 +123,9 @@ wlan0: AP-ENABLED
 
 11. So that the "hostapd" starts as a daemon in the background
     - `sudo nano /etc/default/hostapd`
-    - We add the following parameters:
+    - Remove the # in front of "DAEMON_CONF=""
+    - Then add the following parameters:
 ```
-RUN_DAEMON=yes
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
 
