@@ -53,6 +53,7 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 
 3. Configuring the WLAN interface
     - `sudo nano /etc/dhcpcd.conf`
+    - Delete the contents of the file and replace them with the following lines of code:
 ```
 interface wlan0
 static ip_address=192.168.4.1/24
