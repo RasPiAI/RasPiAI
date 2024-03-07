@@ -33,12 +33,16 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 7. Verify the Docker installation with:
    - `docker run hello-world`
   
-8. Installing **Docker Compose**:
+8. Delete Docker container
+   - `docker ps`
+   - `docker rm` -> enter the Container ID of the "hello-world" container
+
+9. Installing **Docker Compose**:
     - Download [Asset docker-compose-linux-armv7](https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7) for Raspberry Pi 4 with `wget https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7 -O docker-compose`
     - `chmod +x docker-compose`
     - `sudo mv docker-compose /usr/local/bin`
 
-9. Install a Texteditor like **Vim**:
+10. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
   
 ## How to make your Raspberry Pi to an Acess Point: 📡
