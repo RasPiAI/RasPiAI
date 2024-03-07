@@ -19,7 +19,8 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 4. Setting the regional setting, timezone and WLAN:
      - `sudo raspi-config`
      - at "5 Localisation Options" -> "L1 Locale", "L2 Timezone" and "L4 WLAN Country"
-     - choose the settings that suit your country 
+     - choose the settings that suit your country
+     - reboot the system
   
 5. Installing **Docker**:
    - `curl -sSL https://get.docker.com -o install-docker.sh`
