@@ -33,14 +33,9 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 7. Verify the Docker installation with:
    - `docker run hello-world`
   
-8. Delete Docker container
+8. Delete Docker container:
    - `docker ps`
    - `docker rm` -> enter the Container ID of the "hello-world" container
-
-9. Installing **Docker Compose**:
-    - Download [Asset docker-compose-linux-armv7](https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7) for Raspberry Pi 4 with `wget https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-armv7 -O docker-compose`
-    - `chmod +x docker-compose`
-    - `sudo mv docker-compose /usr/local/bin`
 
 10. Install a Texteditor like **Vim**:
    - `sudo apt install vim`
@@ -176,19 +171,14 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
 
 ## How to install ollama 🦙 and open-webui using docker🐳:
 
-1. Running Ollama in a Docker container
-   - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
-2. Check if Ollama is running or not:
-   - `docker ps`
-     > CONTAINER ID: 0a5142e31b9c  IMAGE: 0a5142e31b9c  COMMAND: ollama/ollama:latest  CREATED: 1 minute ago  STATUS:Up 1 minute              PORTS: 0.0.0.:11434->11434/tcp,  :::11434->11434/tcp  NAMES: ollama
-   - `curl http://localhost:11434` -> Ollama is running
+1. Install Ollama:
+   - `curl -fsSL https://ollama.com/install.sh | sh`    
 
-3. Running open-webui
-   - `git clone https://github.com/ollama-webui/ollama-webui`
-   - `cd ollama-webui`
-   - `vim docker-compose.yml` -> [docker-compose.yml](https://github.com/BerryPlexus/BerryPlexus/blob/main/docker-compose.yml)
-   - `docker stop ollama`
-   - `docker compose up -d`
+2. Install Open WebUI:
+   - `docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`
+
+3. Check if Ollama and Open WebUI are running:
+   - `docker ps -a`
   
 ### Troubleshooting: 
 
