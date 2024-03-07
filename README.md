@@ -174,7 +174,7 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. Now "AP" should appear next to the type.
    - The WLAN with the name RasPiAI should now be active.
 
-## How to install ollama 🦙 and open-webui together using docker🐳:
+## How to install ollama 🦙 and open-webui using docker🐳:
 
 1. Running Ollama in a Docker container
    - `docker run -d --name ollama -p 11434:11434 -v ollama_volume:/root/.ollama ollama/ollama:latest`    
