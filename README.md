@@ -165,8 +165,7 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - Configure automatic restart of hostapd. To do this, "always" must be added to "Restart=" under `sudo nano /lib/systemd/system/hostapd.service` or `sudo nano 
      /etc/systemd/system/hostapd.service`.
    - Deactivate the NetworkManager. To do this, execute the commands `sudo systemctl stop NetworkManager` and `sudo systemctl disable NetworkManager`.
-   - Activate and start hostapd again to reconfigure the services. To do this, you must enter the following in sequence: `sudo systemctl stop hostapd`, `sudo systemctl unmask 
-     hostapd`, `sudo systemctl enable hostapd` and `sudo systemctl start hostapd`. 
+   - Activate and start hostapd again to reconfigure the services. To do this, you must enter the following in sequence: `sudo systemctl stop hostapd`, `sudo systemctl unmask hostapd`, `sudo systemctl enable hostapd` and `sudo systemctl start hostapd`. 
    - Reboot the Raspberry Pi with `sudo reboot`.  
 
 ## How to install ollama 🦙 and open-webui together using docker🐳:
