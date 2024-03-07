@@ -67,9 +67,9 @@ nohook wpa_supplicant
 
 6. Set up DHCP server and DNS cache
    -`sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf_alt`
-   -`sudo nano /etc/dnsmasq.conf  `
-   -`sudo nano /etc/dnsmasq.conf`
-
+   -`sudo nano /etc/dnsmasq.conf `
+   - The following minimum configuration must be entered here: 
+  
 ```
 # DHCP server active for WLAN interface
 interface=wlan0
