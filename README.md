@@ -84,7 +84,7 @@ dhcp-range=192.168.4.2,192.168.4.50,255.255.255.0,24h
 7. Check DHCP server and DNS cache and put into operation
    - `dnsmasq --test -C /etc/dnsmasq.conf` -> "syntax check OK"
    - `sudo systemctl restart dnsmasq`
-   - `sudo systemctl status dnsmasq` -> should be "active" and "running" 
+   - `sudo systemctl status dnsmasq` -> You should see "active (running) and "enabled" in green.  
    - `sudo systemctl enable dnsmasq`
 
 8. Set up WLAN-AP host
