@@ -153,10 +153,10 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
     -`sudo reboot`
 
 16. Check WLAN, router and DHCP/DNS function
-    - `sudo systemctl status hostapd` -> should be "active" and "running"
+    - `sudo systemctl status hostapd` ->  You should see "active (running)" and "enabled" in green.
     -` ps ax | grep hostapd`
     - `sudo systemctl status dnsmasq`
-    -  `ps ax | grep dnsmasq`
+    - `ps ax | grep dnsmasq`
 
 ### Troubleshooting: 
 
