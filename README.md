@@ -89,6 +89,7 @@ dhcp-range=192.168.4.2,192.168.4.50,255.255.255.0,24h
 
 8. Set up WLAN-AP host
    - `sudo nano /etc/hostapd/hostapd.conf`
+   - You can replace ssid with your own username and wpa_passphrase with your own password.
 ```
 interface=wlan0
 driver=nl80211
