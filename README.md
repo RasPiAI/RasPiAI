@@ -163,8 +163,7 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - Check the status of the Raspberry Pi with `iw dev wlan0 info`. The problem exists when there is "managed" next to the type instead of "AP".
    - Configure automatic restart of hostapd. To do this, "always" must be added to "Restart=" under `sudo nano /lib/systemd/system/hostapd.service` or `sudo nano 
      /etc/systemd/system/hostapd.service`.
-   - Deactivate the NetworkManager. To do this, execute the commands `sudo systemctl stop NetworkManager` and `sudo systemctl disable NetworkManager`.
-   - Activate and start hostapd again to reconfigure the services. To do this, you must enter the following in sequence: `sudo systemctl stop hostapd`, `sudo systemctl unmask hostapd`, `sudo systemctl enable hostapd` and `sudo systemctl start hostapd`. 
+   - Restart hostapad with the following commands: `sudo systemctl unmask hostapd`, `sudo systemctl start hostapd`, `sudo systemctl enable hostapd`.      
    - Reboot the Raspberry Pi with `sudo reboot`.
    - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. Now "AP" should appear next to the type.
    - The WLAN with the name RasPiAI should now be active.
@@ -209,9 +208,9 @@ ExecStart=-/sbin/agetty --autologin RasPiAI --noclear %I 38400 linux
 
 4. `sudo systemctl daemon-reload`
 
-5.` sudo systemctl enable getty@tty1.service`
+5. `sudo systemctl enable getty@tty1.service`
 
-6.` sudo reboot`
+6. `sudo reboot`
 
 
 ## Resources at your fingertips: ⌨️
