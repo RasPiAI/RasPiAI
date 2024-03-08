@@ -36,9 +36,6 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 8. Delete Docker container:
    - `docker ps`
    - `docker rm` -> enter the Container ID of the "hello-world" container
-
-10. Install a Texteditor like **Vim**:
-   - `sudo apt install vim`
   
 ## How to make your Raspberry Pi to an Acess Point: 📡
 
