@@ -39,15 +39,15 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
   
 ## How to make your Raspberry Pi to an Acess Point: 📡
 
-1. Installation of required programme
+1. **Installation of required programmes:**
    - `sudo apt install dnsmasq hostapd iptables`
    - `sudo apt install dhcpcd5`
 
-2. Stop the packages from running
+2. **Stop the packages from running:**
    - `sudo systemctl stop hostapd`
    - `sudo systemctl stop dnsmasq` 
 
-3. Configuring the WLAN interface
+3. **Configuring the WLAN interface:**
     - `sudo nano /etc/dhcpcd.conf`
     - Delete the contents of the file and replace them with the following lines of code:
 ```
@@ -55,13 +55,13 @@ interface wlan0
 static ip_address=192.168.4.1/24
 nohook wpa_supplicant
 ```
-4. Restart DHCP Client Daemon
+4. **Restart DHCP Client Daemon:**
     - `sudo systemctl restart dhcpcd`
     
-5. Check whether the Ethernet interface (eth0) and the WLAN adapter (wlan0) are working and present.
+5. **Check whether the Ethernet interface (eth0) and the WLAN adapter (wlan0) are working and present:**
     - `ip l`
 
-6. Set up DHCP server and DNS cache
+6. **Set up DHCP server and DNS cache:**
    - `sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf_alt`
    - `sudo nano /etc/dnsmasq.conf `
    - The following minimum configuration must be entered here: 
@@ -77,13 +77,13 @@ no-dhcp-interface=eth0
 dhcp-range=192.168.4.2,192.168.4.50,255.255.255.0,24h
 ```
 
-7. Check DHCP server and DNS cache and put into operation
+7. **Check DHCP server and DNS cache and put into operation:**
    - `dnsmasq --test -C /etc/dnsmasq.conf` -> "syntax check OK"
    - `sudo systemctl restart dnsmasq`
    - `sudo systemctl status dnsmasq` -> You should see "active (running)" and "enabled" in green.  
    - `sudo systemctl enable dnsmasq`
 
-8. Set up WLAN-AP host
+8. **Set up WLAN-AP host:**
    - `sudo nano /etc/hostapd/hostapd.conf`
    - You can replace **ssid** with your own username and **wpa_passphrase** with your own password.
 ```
@@ -103,10 +103,10 @@ wpa_pairwise=TKIP
 rsn_pairwise=CCMP
 ```
 
-9. Changing the read rights to the file
+9. **Changing the read rights to the file:**
    - `sudo chmod 600 /etc/hostapd/hostapd.conf`
 
-10. Check WLAN-AP host configuration and put into operation
+10. **Check WLAN-AP host configuration and put into operation:**
    - `sudo hostapd -dd /etc/hostapd/hostapd.conf` -> With "Ctrl + C" you can end the running hostapd instance if required.
    - If the following messages appear, everything is in the green zone:
 ```
@@ -117,7 +117,7 @@ wlan0: AP-ENABLED
 ...
 ```
 
-11. So that the "hostapd" starts as a daemon in the background
+11. **Let "hostapd" start as a daemon in the background:**
     - `sudo nano /etc/default/hostapd`
     - Remove the # in front of "DAEMON_CONF=""
     - Then add the following parameters:
@@ -125,19 +125,19 @@ wlan0: AP-ENABLED
 DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
 
-12. Start-up of "hostapd"
+12. **Start-up of "hostapd":**
     - `sudo systemctl unmask hostapd`
     - `sudo systemctl start hostapd`
     - `sudo systemctl enable hostapd`
    
-13. Check status of "hostapd
+13. **Check status of "hostapd":**
     - `sudo systemctl status hostapd` -> You should see "active (running)" and "enabled" in green.
 
-14. Check that the WLAN interface is not managed by another network management tool
+14. **Check that the WLAN interface is not managed by another network management tool:**
     - `sudo systemctl stop NetworkManager`
     - `sudo systemctl stop wpa_supplicant`
 
-14.  Configure routing and NAT for the Internet connection
+14.  **Configure routing and NAT for the Internet connection:**
      - `sudo nano /etc/sysctl.conf`
      - remove the # symbol before the following line of code `net.ipv4.ip_forward=1`
      - `sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`
@@ -145,10 +145,10 @@ DAEMON_CONF="/etc/hostapd/hostapd.conf"
      - `sudo nano /etc/rc.local`
      - Here we enter the following code line before the line with "exit 0": `iptables-restore < /etc/iptables.ipv4.nat`
    
-15. Reboot the Raspberry Pi
+15. **Reboot the Raspberry Pi:**
     -`sudo reboot`
 
-16. Check WLAN, router and DHCP/DNS function
+16. **Check WLAN, router and DHCP/DNS functions:**
     - `sudo systemctl status hostapd` ->  You should see "active (running)" and "enabled" in green.
     - `ps ax | grep hostapd`
     - `sudo systemctl status dnsmasq` ->  You should see "active (running)" and "enabled" in green.
@@ -162,8 +162,7 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
      /etc/systemd/system/hostapd.service`.
    - Restart hostapad with the following commands: `sudo systemctl unmask hostapd`, `sudo systemctl start hostapd`, `sudo systemctl enable hostapd`.      
    - Reboot the Raspberry Pi with `sudo reboot`.
-   - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. Now "AP" should appear next to the type.
-   - The WLAN with the name RasPiAI should now be active.
+   - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. You should see "AP" next to the type. The WLAN with the name RasPiAI should now be active.
 
 ## How to install ollama 🦙 and open-webui using docker🐳:
 
