@@ -6,8 +6,8 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 
 1. Installing **Raspberry Pi OS**:
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://www.raspberrypi.com/software/)
-    - The BerryPlexus can be reached via SSH, username: RasPiAI, password: RasPiAI$.
-
+   - The RasPiAI can be accessed via SSH, username: RasPiAI, password: RasPiAI$. You can choose your own username and password if you like.
+     
 2. Raspberry Pi OS Lite **updaten und upgraden**:
    - `sudo apt update && sudo apt upgrade`
    - `sudo reboot`
