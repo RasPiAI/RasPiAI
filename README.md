@@ -166,21 +166,21 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
 
 ## How to install ollama 🦙 and open-webui using docker🐳:
 
-1. Install Ollama:
+1. **Install Ollama:**
    - `curl -fsSL https://ollama.com/install.sh | sh`    
 
-2. Install Open WebUI:
+2. **Install Open WebUI:**
    - `docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`
 
-3. Check if Ollama and Open WebUI are running:
+3. **Check if Ollama and Open WebUI are running:**
    - `docker ps -a`
    
 ## How to configure the Firewall: 🔥
 
-1. Allow incoming connections on port 80
+1. **Allow incoming connections on port 80:**
    - `sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT`
   
-2. Save Firewall Rules
+2. **Save Firewall Rules:**
    - `sudo apt-get install iptables-persistent`
    - `sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null `
 
