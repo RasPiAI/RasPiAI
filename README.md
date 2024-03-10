@@ -4,36 +4,36 @@ To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 
 
 ## How to prepare the Raspberry Pi: 🥧
 
-1. Installing **Raspberry Pi OS**:
+1. **Installing Raspberry Pi OS:**
    - Download Raspberry Pi OS Lite as an operating System from [Raspberry PI](https://www.raspberrypi.com/software/)
    - The RasPiAI can be accessed via SSH, username: RasPiAI, password: RasPiAI$. You can choose your own username and password if you like.
      
-2. Raspberry Pi OS Lite **updaten und upgraden**:
+2. **Raspberry Pi OS Lite updaten und upgraden:**
    - `sudo apt update && sudo apt upgrade`
    - `sudo reboot`
       
-3. Enlarge the partition of the Mico-SD card:
+3. **Enlarge the partition of the Mico-SD card:**
     - `sudo raspi-config`
     - at "6 Advanced Options" -> "A1 Expand Filesystem"
 
-4. Setting the regional setting, timezone and WLAN:
+4. **Setting the regional setting, timezone and WLAN:**
      - `sudo raspi-config`
      - at "5 Localisation Options" -> "L1 Locale", "L2 Timezone" and "L4 WLAN Country"
      - choose the settings that suit your country
      - reboot the system
   
-5. Installing **Docker**:
+5. **Installing Docker:**
    - `curl -sSL https://get.docker.com -o install-docker.sh`
    - `bash install-docker.sh`
 
-6. Inclusion of the current user in the Docker user group:
+6. **Inclusion of the current user in the Docker user group:**
    - `sudo usermod -aG docker $USER`
    - `newgrp docker`
 
-7. Verify the Docker installation with:
+7. **Verify the Docker installation:**
    - `docker run hello-world`
   
-8. Delete Docker container:
+8. **Delete Docker container:**
    - `docker ps`
    - `docker rm` -> enter the Container ID of the "hello-world" container
   
