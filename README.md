@@ -197,6 +197,10 @@ ExecStart=-/sbin/agetty --autologin RasPiAI --noclear %I 38400 linux
 
 6. `sudo reboot`
 
+## Recommended LLM models 👍:
+
+
+
 
 ## Resources at your fingertips: ⌨️
 
