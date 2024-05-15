@@ -164,17 +164,11 @@ There is a possibility that the Raspberry Pi will lose its ability to function a
    - Reboot the Raspberry Pi with `sudo reboot`.
    - Check the status of the Raspberry Pi again with `iw dev wlan0 info`. You should see "AP" next to the type. The WLAN with the name RasPiAI should now be active.
 
-## How to install ollama 🦙 and open-webui using docker🐳:
+## How to install ollama 🦙 and open-webui:
 
-1. **Install Ollama:**
-   - `curl -fsSL https://ollama.com/install.sh | sh`    
+**Install Ollama & open-webui together:**
+   - `docker run -d -p 3000:8080 -v ollama:/root/.ollama -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:ollama`    
 
-2. **Install Open WebUI:**
-   - `docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main`
-
-3. **Check if Ollama and Open WebUI are running:**
-   - `docker ps -a`
-   
 ## How to configure the Firewall: 🔥
 
 1. **Allow incoming connections on port 80:**
