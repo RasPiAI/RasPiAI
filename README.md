@@ -199,8 +199,10 @@ ExecStart=-/sbin/agetty --autologin RasPiAI --noclear %I 38400 linux
 
 ## Recommended LLM models 👍:
 
+The models listed here are primarily aimed at those users who are looking for a small LLM model that can communicate in other languages as well as English.
 
-
+- [Phi-3 Mini ]([https://ollama.com/library/phi3]) - for general communication
+- [Starcoder2 ]([https://ollama.com/library/starcoder2]) - for coding
 
 ## Resources at your fingertips: ⌨️
 
