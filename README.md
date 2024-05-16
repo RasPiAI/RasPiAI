@@ -207,7 +207,7 @@ The models listed here are primarily aimed at those users who are looking for sm
 ## Starting your LLMs 🍾:
 
 - In a browser of your choice, enter the IP address **http://192.168.4.1:3000/**.
-- Log in with any user name and email address. The first person to log in after start-up is automatically given administrator rights. This person can now authorise other users. 
+- Sign up with any user name and email address. The first person to log in after start-up is automatically given administrator rights. This person can now authorise other users. 
 
 ## Resources at your fingertips: ⌨️
 
