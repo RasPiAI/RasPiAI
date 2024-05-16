@@ -204,6 +204,11 @@ The models listed here are primarily aimed at those users who are looking for sm
 - [Phi-3 Mini ]([https://ollama.com/library/phi3]) - for general communication
 - [Starcoder2 ]([https://ollama.com/library/starcoder2]) - for coding
 
+## Starting your LLMs 🍾:
+
+- In a browser of your choice, enter the IP address **http://192.168.4.1:3000/**.
+- Log in with any user name and email address. The first person to log in after start-up is automatically given administrator rights. This person can now authorise other users. 
+
 ## Resources at your fingertips: ⌨️
 
 1. [Raspberry Pi Cheatsheet](https://opensource.com/sites/default/files/gated-content/raspberry_pi_cheatsheet_from_opensource.com_.pdf)
