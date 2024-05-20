@@ -1,4 +1,4 @@
-### Version 0.1 (pre-release), 2024-02-24 (first version)
+### Version 0.1, 2024-05-20 (first version)
 
 To build a RasPiAI from scratch with this script, you need a Raspberry Pi 4B or 5 with 8 GB of RAM.
 
